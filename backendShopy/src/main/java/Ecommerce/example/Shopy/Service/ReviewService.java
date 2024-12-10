@@ -2,9 +2,12 @@ package Ecommerce.example.Shopy.Service;
 
 import Ecommerce.example.Shopy.Config.GlobalRESTAPIHandler;
 import Ecommerce.example.Shopy.Config.ResponseAPI;
+import Ecommerce.example.Shopy.Entity.Product;
 import Ecommerce.example.Shopy.Entity.Review;
 import Ecommerce.example.Shopy.Repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -35,6 +38,9 @@ public class ReviewService {
         } else {
             return globalRESTAPIHandler.createResponse("Review not found!", HttpStatus.NOT_FOUND, null);
         }
+    }
+    public Page<Review> findAllPaginated(Pageable pageable) {
+        return reviewRepository.findAll(pageable);
     }
 
 

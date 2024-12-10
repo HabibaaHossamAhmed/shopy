@@ -5,6 +5,8 @@ import Ecommerce.example.Shopy.Config.ResponseAPI;
 import Ecommerce.example.Shopy.Entity.User;
 import Ecommerce.example.Shopy.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -36,6 +38,9 @@ public class UserService {
         } else {
             return globalRESTAPIHandler.createResponse("User not found!", HttpStatus.NOT_FOUND, null);
         }
+    }
+    public Page<User> findAllPaginated(Pageable pageable) {
+        return userRepository.findAll(pageable);
     }
 
 }

@@ -2,6 +2,7 @@ package Ecommerce.example.Shopy.Service;
 
 import Ecommerce.example.Shopy.Config.GlobalRESTAPIHandler;
 import Ecommerce.example.Shopy.Config.ResponseAPI;
+import Ecommerce.example.Shopy.Entity.Product;
 import Ecommerce.example.Shopy.Entity.Product_Photo;
 import Ecommerce.example.Shopy.Repository.Product_PhotoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,4 +38,7 @@ public class Product_PhotoService {
                     null);
         }
     }
+
+
+
 }

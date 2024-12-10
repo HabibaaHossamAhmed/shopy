@@ -10,5 +10,4 @@ import java.util.UUID;
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order , UUID> {
-   public Optional<Order> getById(Order order);
 }

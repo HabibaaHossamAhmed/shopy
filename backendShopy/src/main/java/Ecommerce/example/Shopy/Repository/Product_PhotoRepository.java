@@ -9,5 +9,4 @@ import java.util.Optional;
 
 @Repository
 public interface Product_PhotoRepository extends JpaRepository<Product_Photo, Long> {
-    public Optional<Product_Photo> getById(Product_Photo productPhoto);
 }

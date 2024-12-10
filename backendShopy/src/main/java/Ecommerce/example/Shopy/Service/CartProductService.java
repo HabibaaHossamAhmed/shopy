@@ -22,8 +22,7 @@ public class CartProductService {
 
     public ResponseEntity<ResponseAPI<CartProduct>> saveOrUpdateCartProduct(CartProduct cartProduct, String successMessage)
     {
-        CartProduct savedCartProduct = cartProductRepository.save(cartProduct);
-        return globalRESTAPIHandler.createResponse(successMessage, HttpStatus.OK, savedCartProduct);
+        return globalRESTAPIHandler.createResponse(successMessage, HttpStatus.OK, cartProductRepository.save(cartProduct));
     }
 
     public ResponseEntity<ResponseAPI<String>> deleteCartProduct(CartProduct cartProduct) {
