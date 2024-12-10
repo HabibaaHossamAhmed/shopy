@@ -14,7 +14,7 @@ import java.util.Set;
 public class Product_Photo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @Lob
     private byte[] image;

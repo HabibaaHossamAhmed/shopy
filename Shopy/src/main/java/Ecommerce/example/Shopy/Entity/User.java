@@ -54,7 +54,7 @@ public class User {
     public enum RoleType {
         CallCenter ,
         Client,
-        Delivery_man,
+        Shippment_Company,
         Seller
     }
 }

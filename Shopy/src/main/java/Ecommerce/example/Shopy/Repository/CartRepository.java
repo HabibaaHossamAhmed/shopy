@@ -1,9 +1,11 @@
 package Ecommerce.example.Shopy.Repository;
 
-import Ecommerce.example.Shopy.Entity.Category;
+import Ecommerce.example.Shopy.Entity.Cart;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.UUID;
+
 @Repository
-public interface CategoryRepository extends JpaRepository <Category , Long> {
+public interface CartRepository extends JpaRepository<Cart , UUID> {
 }
