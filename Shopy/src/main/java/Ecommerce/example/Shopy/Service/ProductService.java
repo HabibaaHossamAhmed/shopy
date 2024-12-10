@@ -29,7 +29,7 @@ public class ProductService {
 
         if (productFound.isPresent()) {
             productRepository.deleteById(product.getId());
-            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "Cart ID: "
+            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "product ID: "
                     + product.getId());
         } else {
             return globalRESTAPIHandler.createResponse("Product not found!", HttpStatus.NOT_FOUND, null);

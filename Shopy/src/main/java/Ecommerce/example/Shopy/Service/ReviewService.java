@@ -30,7 +30,7 @@ public class ReviewService {
 
         if (reviewFound.isPresent()) {
             reviewRepository.deleteById(review.getId());
-            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "Cart ID: "
+            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "review ID: "
                     + review.getId());
         } else {
             return globalRESTAPIHandler.createResponse("Review not found!", HttpStatus.NOT_FOUND, null);

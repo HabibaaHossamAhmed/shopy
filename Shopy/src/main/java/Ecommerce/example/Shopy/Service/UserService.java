@@ -31,7 +31,7 @@ public class UserService {
 
         if (userFound.isPresent()) {
             userRepository.deleteById(user.getId());
-            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "Cart ID: "
+            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "user ID: "
                     + user.getId());
         } else {
             return globalRESTAPIHandler.createResponse("User not found!", HttpStatus.NOT_FOUND, null);

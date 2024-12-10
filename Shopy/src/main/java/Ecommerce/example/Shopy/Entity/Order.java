@@ -1,13 +1,12 @@
 package Ecommerce.example.Shopy.Entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+
 import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.UUID;
@@ -16,21 +15,10 @@ import java.util.UUID;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
-
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-
-    @NotEmpty(message = "Name must not be empty or null")
-    private String name;
-
-    @Email
-    @NotEmpty(message = "Email must not be empty or null")
-    private String email;
-
-    @NotEmpty(message = "Password must not be empty or null")
-    private String password;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
@@ -39,25 +27,22 @@ public class User {
     @LastModifiedDate
     private LocalDateTime lastModifiedDate;
 
-    private String number;
-
-    private String country;
+    private Double totalPrice;
 
     @Enumerated(EnumType.STRING)
-    private RoleType role;
+    private shipmentProcess process;
 
-    @ManyToMany(mappedBy = "user_product")
-    private Set<Product> productSet;
+    @ManyToOne
+    private User user_id;
 
-    @OneToMany
-    private Set<Order> order_id;
+    @ManyToMany
+    private Set<Product> products;
 
 
 
-    public enum RoleType {
-        CallCenter ,
-        Client,
-        Shipment_Company,
-        Seller
+    public enum shipmentProcess {
+        Ordered ,
+        Shipping,
+        delivered,
     }
 }

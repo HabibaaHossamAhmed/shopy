@@ -31,7 +31,8 @@ public class SubCategoryService {
 
         if (subCategoryFound.isPresent()) {
             subCategoryRepository.deleteById(subCategory.getId());
-            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "Cart ID: "
+            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "Subcategory" +
+                    " ID: "
                     + subCategory.getId());
         } else {
             return globalRESTAPIHandler.createResponse("Subcategory not found!", HttpStatus.NOT_FOUND,

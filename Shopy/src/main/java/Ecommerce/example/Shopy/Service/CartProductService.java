@@ -31,7 +31,8 @@ public class CartProductService {
 
         if (cartProductFound.isPresent()) {
             cartProductRepository.deleteById(cartProduct.getId());
-            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "Cart ID: "
+            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "Product " +
+                    "Cart ID: "
                     + cartProduct.getId());
         } else {
             return globalRESTAPIHandler.createResponse("Product in the cart is" +

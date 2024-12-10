@@ -30,7 +30,7 @@ public class Product_PhotoService {
 
         if (productPhotoFound.isPresent()) {
             productPhotoRepository.deleteById(productPhoto.getId());
-            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "Cart ID: "
+            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "Photo ID: "
                     + productPhoto.getId());
         } else {
             return globalRESTAPIHandler.createResponse("Product's photo  not found!", HttpStatus.NOT_FOUND,

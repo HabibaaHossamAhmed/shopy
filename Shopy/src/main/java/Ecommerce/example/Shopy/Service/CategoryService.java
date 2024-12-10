@@ -30,7 +30,8 @@ public class CategoryService {
 
         if (categoryFound.isPresent()) {
             categoryRepository.deleteById(category.getId());
-            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "Cart ID: "
+            return globalRESTAPIHandler.createResponse("Deleted Successfully!", HttpStatus.OK, "Category" +
+                    " ID: "
                     + category.getId());
         } else {
             return globalRESTAPIHandler.createResponse("Category not found!", HttpStatus.NOT_FOUND, null);

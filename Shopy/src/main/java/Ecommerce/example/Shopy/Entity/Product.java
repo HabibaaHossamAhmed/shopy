@@ -49,5 +49,9 @@ public class Product {
             inverseJoinColumns = @JoinColumn(name = "user_id"))
     private Set<User> user_product;
 
+    @ManyToMany(mappedBy = "products")
+    private Set<Order> orders;
+
+
 
 }
